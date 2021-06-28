@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ARM Robot Controller</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ArmController.css"> 
+</head>
+<body>
+<div class="Arm">
+<h3>التحكم في الروبوت </h3>
+<form action="Run.php" method="post" >
+  <p ><span id="Text1"></span> &nbsp;  :  محرك 1 </p>
+  <input type="range" name="out1" min="0" max="180" value="90" class="slider" id="slider1"> 
+  <p > <span id="Text2"></span> &nbsp;   :  محرك 2 </p>
+    <input type="range" name="out2" min="0" max="180" value="90" class="slider" id="slider2">
+    <p > <span id="Text3"></span> &nbsp;   :  محرك 3 </p>
+    <input type="range"  name="out3" min="0" max="180" value="90" class="slider" id="slider3"> 
+    <p > <span id="Text4"></span> &nbsp;   :  محرك 4 </p>
+    <input type="range"  name="out4"min="0" max="180" value="90"  class="slider" id="slider4">
+    <p > <span id="Text5"></span> &nbsp;   :  محرك 5 </p>
+    <input type="range"name="out5" min="0" max="180" value="90" class="slider" id="slider5">
+    <input class="btn" id="save" name="save"type = "submit" value = "حفظ" /> 
+ <input  class="btn" id="Run" name="run" type = "submit" value = "تشغيل" /> 
+ <input  class="btn" id="Off" name="Off" type = "submit" value = "ايقاف" /> 
+</form>
+</div>
+
+<div class="e">
+  <form action="move.php" method="post" >
+ <input  class="btn2" id="l" name="l" type = "submit" value = "يسار" /> 
+ <input  class="btn2" id="r" name="r" type = "submit" value = "يمين" /> 
+ <input  class="btn2" id="f" name="f" type = "submit" value = "أمام" /> 
+ <input  class="btn2" id="b" name="b" type = "submit" value = "خلف" /> 
+ <input  class="btn2" id="s" name="s" type = "submit" value = "توقف" /> 
+ </form>
+
+</div>
+
+
+
+
+<script>
+var slider1 = document.getElementById("slider1");
+var slider2 = document.getElementById("slider2");
+var slider3 = document.getElementById("slider3");
+var slider4 = document.getElementById("slider4");
+var slider5 = document.getElementById("slider5");
+
+var output1 = document.getElementById("Text1");
+output1.innerHTML = slider1.value;
+var output2 = document.getElementById("Text2");
+output2.innerHTML = slider2.value;
+var output3 = document.getElementById("Text3");
+output3.innerHTML = slider3.value;
+var output4 = document.getElementById("Text4");
+output4.innerHTML = slider4.value;
+var output5 = document.getElementById("Text5");
+output5.innerHTML = slider5.value;
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
+}
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+}
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+}
+slider4.oninput = function() {
+  output4.innerHTML = this.value;
+}
+slider5.oninput = function() {
+  output5.innerHTML = this.value;
+}
+</script>
+</body>
+</html>
+
